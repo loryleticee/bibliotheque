@@ -3,18 +3,21 @@
 namespace App\Controller;
 
 use Router\Router;
-
-final class AppController 
+class AppController 
 {
 
-    public function index(): void
+    public static function index()
     {
-        print("Hello World");
+       include "./src/Views/home.php";
     }
 
-    public function error404(): void
+    public function ShowBook()
+    {
+       include "./src/Views/ShowArticle.php";
+    }
+
+    public function error404()
     {
         Router::redirect("404");
     }
-
 }
